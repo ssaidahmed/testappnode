@@ -10,10 +10,12 @@ var mass = [
 	{id: 7, parentId: 5},
 	{id: 17, parentId: 4},
 	{id: 12, parentId: 17},
-	{id: 112, parentId: 1}
+	{id: 112, parentId: 1},
+	{id: 113, parentId: 1}
 	
 ];
-function f(index, obj, mass){ // рекурсивная функция вызывает себя , если совпадают id и parentId объектов
+
+function f(index, obj, mass){ // Рекурсивная функция вызывает себя , если совпадают id и parentId объектов
 		
 		for(var i = index; i < mass.length; i++){
 			
