@@ -1,0 +1,84 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  
+    form(method="post", action="/", class="form-horizontal")
+        div.form-group
+            label(for="url", class="col-xs-2 control-label") URL:
+            div.col-xs-10
+                input(type="text", id="url", name="url", value = "https://www.reddit.com/r/javascript/.json", placeholder="Url")
+        div.form-group
+            label(for="dBName", class="col-xs-2 control-label") Db Name:
+            div.col-xs-10
+                input(type="text",  name="dBName", value = "data", placeholder="Db Name")        
+        div.form-group
+            label(for="Filename", class="col-xs-2 control-label") Filename:
+            div.col-xs-10
+                input(type="text", name="filename", placeholder="Filename")
+        div.form-group
+            label(for="Delimiter", class="col-xs-2 control-label") Select format:
+            div.col-xs-10
+                select#format(name='format', onchange='selectFormat()')
+                    option(value='csv' ) CSV
+                    option(value='sql' , selected) SQL
+        div.form-group
+            label(for="Delimiter", class="col-xs-2 control-label") Select sorting or aggr:
+            div.col-xs-10
+                select#sort(name='sort', onchange='selectFormat()')
+                    option(value='sorting', selected ) sorting
+                    option(value='aggregation' ) aggregation
+        div.form-group#csv
+            label(for="Delimiter", class="col-xs-2 control-label") Delimiter:
+            div.col-xs-10
+                input(type="text", name="delimiter", placeholder="Delimiter")
+        div.group#sql
+            div.form-group
+                label(for="Delimiter", class="col-xs-2 control-label") FieldName:       
+                div.col-xs-10
+                    input(type="text", name="filed1")
+            div.form-group
+                label(for="Delimiter", class="col-xs-2 control-label") FieldName:    
+                div.col-xs-10  
+                    input(type="text", name="filed2")
+            div.form-group  
+                label(for="Delimiter", class="col-xs-2 control-label") FieldName:  
+                div.col-xs-10    
+                    input(type="text", name="filed3")
+            div.form-group#showForSort
+                label(for="Delimiter", class="col-xs-2 control-label") FieldName:    
+                div.col-xs-10   
+                    input(type="text", id='showForSort', name="filed4")
+        div.form-group
+            div.col-xs-offset-3
+                input(type="submit", value="add", class="btn btn-primary")
+
+  script(type="text/javascript").
+      function selectFormat(){
+      var elemForm = document.getElementById('format').options.selectedIndex;
+      var elemSort = document.getElementById('sort').options.selectedIndex;
+      var valueFormat = document.getElementById('format').options[elemForm].value;
+      var valueSort = document.getElementById('sort').options[elemSort].value;
+      
+      if(valueFormat === 'csv'){
+        //- var sql = document.getElementById('sql');        
+        //- sql.style.display = 'none';
+        var csv = document.getElementById('csv');        
+        csv.style.display = 'block';
+      }else if(valueFormat === 'sql'){
+        var csv = document.getElementById('csv');        
+        csv.style.display = 'none';
+        var sql = document.getElementById('sql');        
+        sql.style.display = 'block';
+      }
+
+      if(valueSort === 'sorting'){
+        var sql = document.getElementById('showForSort');        
+        sql.style.display = 'block';
+      }else if(valueSort === 'aggregation'){
+        var sql = document.getElementById('showForSort');        
+        sql.style.display = 'none';
+      }
+      }
