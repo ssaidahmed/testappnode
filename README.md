@@ -8,7 +8,7 @@
 Задание 1 (сортировка статей)
 На входе:
 1. json вида
-{
+```{
 	"kind": "Listing",
 	"data": {
     	"modhash": "",
@@ -99,6 +99,7 @@
         	}
     	}
 ....
+```
 целиком он тут http://www.reddit.com/r/javascript/.json (это отображение страницы http://www.reddit.com/r/javascript)
 2. направление и поле (дата создания, баллы) для сортировки выходных данных
 3. выходной формат (csv, sql) и доп. параметры для форматтера (разделитель для csv, имя таблицы и полей для sql и пр.)
@@ -133,15 +134,15 @@ domain, articles count (количество статей на домене), sc
 http://nodejs.org/docs/v4.4.0/api/
  
 Пакеты с версиями из npm, мин. набор:
-		"express": "4.x.x",
+		```"express": "4.x.x",
 		"twostep": "0.4.1",
 		"jade": "1.x.x",
 		"conform": "0.2.12",
-		"underscore": "1.8.3"
+		"underscore": "1.8.3"```
  
 если нужна база, то mongodb 3.2, драйвера:
-		"mongodb": "2.1.4",
-		"mongodbext": "2.0.1",
+		```"mongodb": "2.1.4",
+		"mongodbext": "2.0.1",```
  
 Сode style
  
@@ -157,7 +158,7 @@ https://github.com/2do2go/code-style/blob/master/js.md
 Задача: превратить массив "плоских" объектов в массив объектов с вложенными детьми (поле children).
  
 Исходные данные
- 
+ ```
 [
 	{id: 1, parentId: 0},
 	{id: 2, parentId: 0},
@@ -166,11 +167,11 @@ https://github.com/2do2go/code-style/blob/master/js.md
 	{id: 5, parentId: 2},
 	{id: 6, parentId: 4},
 	{id: 7, parentId: 5}
-];
+];```
  
 должны превратиться в
  
- 
+``` 
 [
 	{
     	"id": 1,
@@ -208,6 +209,6 @@ https://github.com/2do2go/code-style/blob/master/js.md
         	}
     	]
 	}
-]
+]```
  
 
