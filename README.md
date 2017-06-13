@@ -167,11 +167,11 @@ https://github.com/2do2go/code-style/blob/master/js.md
 	{id: 5, parentId: 2},
 	{id: 6, parentId: 4},
 	{id: 7, parentId: 5}
-];```
+];
  
 должны превратиться в<br>
  
-``` 
+
 [
 	{
     	"id": 1,
