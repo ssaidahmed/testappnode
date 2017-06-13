@@ -169,7 +169,7 @@ https://github.com/2do2go/code-style/blob/master/js.md
 	{id: 7, parentId: 5}
 ];```
  
-должны превратиться в
+должны превратиться в<br>
  
 ``` 
 [
